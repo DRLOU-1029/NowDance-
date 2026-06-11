@@ -1,0 +1,10 @@
+name: nowdance
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.26
+  - pip:
+      - opencv-python>=4.9
+      - mediapipe>=0.10

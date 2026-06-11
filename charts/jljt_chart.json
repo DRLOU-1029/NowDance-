@@ -1,0 +1,314 @@
+{
+  "name": "极乐净土",
+  "bpm": 131.0,
+  "steps": [
+    {
+      "step_number": 1,
+      "name": "身体朝左，左右手同时向左伸直",
+      "motion_type": "pose",
+      "start_time": 0.0,
+      "end_time": 5.038
+    },
+    {
+      "step_number": 2,
+      "name": "右手顺时针旋转一周",
+      "motion_type": "pose",
+      "start_time": 5.038,
+      "end_time": 8.702
+    },
+    {
+      "step_number": 3,
+      "name": "右手顺时针旋转一周",
+      "motion_type": "pose",
+      "start_time": 8.702,
+      "end_time": 12.366
+    },
+    {
+      "step_number": 4,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 12.366,
+      "end_time": 13.282
+    },
+    {
+      "step_number": 5,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 13.282,
+      "end_time": 14.198
+    },
+    {
+      "step_number": 6,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 14.198,
+      "end_time": 15.115
+    },
+    {
+      "step_number": 7,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 15.115,
+      "end_time": 16.031
+    },
+    {
+      "step_number": 8,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 16.031,
+      "end_time": 16.947
+    },
+    {
+      "step_number": 9,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 16.947,
+      "end_time": 17.863
+    },
+    {
+      "step_number": 11,
+      "name": "手臂收窄垂直向上",
+      "motion_type": "pose",
+      "start_time": 17.863,
+      "end_time": 18.779
+    },
+    {
+      "step_number": 12,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 18.779,
+      "end_time": 19.695
+    },
+    {
+      "step_number": 13,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 19.695,
+      "end_time": 20.611
+    },
+    {
+      "step_number": 14,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 20.611,
+      "end_time": 21.527
+    },
+    {
+      "step_number": 15,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 21.527,
+      "end_time": 22.443
+    },
+    {
+      "step_number": 16,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 22.443,
+      "end_time": 23.359
+    },
+    {
+      "step_number": 17,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 23.359,
+      "end_time": 24.275
+    },
+    {
+      "step_number": 18,
+      "name": "右手向右下左手向左上",
+      "motion_type": "pose",
+      "start_time": 24.275,
+      "end_time": 25.191
+    },
+    {
+      "step_number": 19,
+      "name": "右手向右上左手向左下",
+      "motion_type": "pose",
+      "start_time": 25.191,
+      "end_time": 26.107
+    },
+    {
+      "step_number": 20,
+      "name": "双臂与肩齐平，手肘向外，小臂指向胸前",
+      "motion_type": "pose",
+      "start_time": 26.107,
+      "end_time": 27.26
+    },
+    {
+      "step_number": 21,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 27.26,
+      "end_time": 27.511
+    },
+    {
+      "step_number": 22,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 27.511,
+      "end_time": 27.762
+    },
+    {
+      "step_number": 23,
+      "name": "右肘向右上左肘向左下（循环）",
+      "motion_type": "pose",
+      "start_time": 27.762,
+      "end_time": 28.139
+    },
+    {
+      "step_number": 24,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 28.139,
+      "end_time": 28.39
+    },
+    {
+      "step_number": 25,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 28.39,
+      "end_time": 28.641
+    },
+    {
+      "step_number": 26,
+      "name": "右肘向右下左肘向左上（镜像循环）",
+      "motion_type": "pose",
+      "start_time": 28.641,
+      "end_time": 29.018
+    },
+    {
+      "step_number": 27,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 29.018,
+      "end_time": 29.269
+    },
+    {
+      "step_number": 28,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 29.269,
+      "end_time": 29.52
+    },
+    {
+      "step_number": 29,
+      "name": "右肘向右上左肘向左下（循环）",
+      "motion_type": "pose",
+      "start_time": 29.52,
+      "end_time": 29.897
+    },
+    {
+      "step_number": 30,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 29.897,
+      "end_time": 30.148
+    },
+    {
+      "step_number": 31,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 30.148,
+      "end_time": 30.399
+    },
+    {
+      "step_number": 32,
+      "name": "右肘向右下左肘向左上（镜像循环）",
+      "motion_type": "pose",
+      "start_time": 30.399,
+      "end_time": 30.776
+    },
+    {
+      "step_number": 33,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 30.776,
+      "end_time": 31.027
+    },
+    {
+      "step_number": 34,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 31.027,
+      "end_time": 31.278
+    },
+    {
+      "step_number": 35,
+      "name": "右肘向右上左肘向左下（循环）",
+      "motion_type": "pose",
+      "start_time": 31.278,
+      "end_time": 31.655
+    },
+    {
+      "step_number": 36,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 31.655,
+      "end_time": 31.906
+    },
+    {
+      "step_number": 37,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 31.906,
+      "end_time": 32.157
+    },
+    {
+      "step_number": 38,
+      "name": "右肘向右下左肘向左上（镜像循环）",
+      "motion_type": "pose",
+      "start_time": 32.157,
+      "end_time": 32.534
+    },
+    {
+      "step_number": 39,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 32.534,
+      "end_time": 32.785
+    },
+    {
+      "step_number": 40,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 32.785,
+      "end_time": 33.036
+    },
+    {
+      "step_number": 41,
+      "name": "右肘向右上左肘向左下（循环）",
+      "motion_type": "pose",
+      "start_time": 33.036,
+      "end_time": 33.413
+    },
+    {
+      "step_number": 42,
+      "name": "右肘向右下左肘向左上",
+      "motion_type": "pose",
+      "start_time": 33.413,
+      "end_time": 33.664
+    },
+    {
+      "step_number": 43,
+      "name": "右肘向右上左肘向左下",
+      "motion_type": "pose",
+      "start_time": 33.664,
+      "end_time": 33.915
+    },
+    {
+      "step_number": 44,
+      "name": "右肘向右下左肘向左上（镜像循环）",
+      "motion_type": "pose",
+      "start_time": 33.915,
+      "end_time": 34.292
+    },
+    {
+      "step_number": 45,
+      "name": "左手叉腰右手下垂",
+      "motion_type": "pose",
+      "start_time": 34.292,
+      "end_time": 34.5
+    }
+  ]
+}
