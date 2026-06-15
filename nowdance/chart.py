@@ -37,6 +37,7 @@ class ChartStep:
     circle_direction: Literal["cw", "ccw"] | None = None
     revolutions: int = 1
     expected_jerk: float = 0.08
+    tolerance: float = 1.0
 
     def to_json(self) -> dict[str, Any]:
         base = {
@@ -87,6 +88,7 @@ class ChartStep:
             circle_direction=payload.get("direction"),
             revolutions=payload.get("revolutions", 1),
             expected_jerk=payload.get("expected_jerk", 0.08),
+            tolerance=payload.get("tolerance", 1.0),
         )
 
 

@@ -43,6 +43,19 @@ def main() -> None:
     visualize_parser.add_argument("--fps", type=float, default=None, help="输出视频帧率，默认使用序列采样帧率")
     visualize_parser.add_argument("--visibility-threshold", type=float, default=0.35)
 
+
+    quality_parser = subparsers.add_parser("quality", help="????????????????")
+    quality_parser.add_argument("--chart", default="charts/jljt_chart.json", help="?? JSON ??")
+    quality_parser.add_argument("--video", required=True, help="?????????????")
+    quality_parser.add_argument("--sequence", default="charts/jljt.json", help="?????? JSON ?????????????")
+    quality_parser.add_argument("--camera-index", type=int, default=0, help="?????")
+    quality_parser.add_argument("--task-model", default="models/pose_landmarker_lite.task", help="MediaPipe Tasks ????")
+    quality_parser.add_argument("--canvas-width", type=int, default=1280, help="????")
+    quality_parser.add_argument("--canvas-height", type=int, default=720, help="????")
+    quality_parser.add_argument("--inference-width", type=int, default=480, help="???????????")
+    quality_parser.add_argument("--process-every", type=int, default=1, help="????????????")
+    quality_parser.add_argument("--no-mirror", action="store_true", help="????????")
+    quality_parser.add_argument("--no-audio", action="store_true", help="?????????")
     live_parser = subparsers.add_parser("live", help="打开摄像头进行实时评分")
     live_parser.add_argument("--standard", required=True, help="标准动作 JSON 路径")
     live_parser.add_argument("--video", required=True, help="左侧播放的标准舞蹈视频路径")
@@ -123,6 +136,23 @@ def main() -> None:
         print(f"已渲染 {len(sequence.frames)} 帧骨架动画，保存到 {args.out}")
         return
 
+
+    if args.command == "quality":
+        from .live_quality import run_quality_live
+        run_quality_live(
+            chart_path=args.chart,
+            reference_video=args.video,
+            sequence_path=args.sequence if args.sequence != "none" else None,
+            camera_index=args.camera_index,
+            task_model=args.task_model,
+            canvas_width=args.canvas_width,
+            canvas_height=args.canvas_height,
+            inference_width=args.inference_width,
+            process_every=args.process_every,
+            mirror_camera=not args.no_mirror,
+            play_audio=not args.no_audio,
+        )
+        return
     if args.command == "live":
         run_live_scoring(
             load_sequence(args.standard),

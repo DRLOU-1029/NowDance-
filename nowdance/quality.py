@@ -50,8 +50,11 @@ class StepQualityReport:
     step_number: int
     motion_type: str
     score: float
-    details: dict[str, Any]
-    issues: list[str]
+    grade: str
+    combo: int = 0
+    golden: bool = False
+    details: dict[str, Any] = None
+    issues: list[str] = None
 
 
 def evaluate_step(
@@ -74,10 +77,18 @@ def evaluate_step(
     else:
         raise ValueError(f"未知动作类型: {step.motion_type}")
 
+    score = round(result.overall_quality, 2)
+    if score >= 90: grade = "Perfect"
+    elif score >= 75: grade = "Great"
+    elif score >= 60: grade = "Good"
+    elif score >= 40: grade = "Okay"
+    else: grade = "Miss"
+
     return StepQualityReport(
         step_number=step.step_number,
         motion_type=step.motion_type,
-        score=round(result.overall_quality, 2),
+        score=score,
+        grade=grade,
         details=result.__dict__,
         issues=result.issues,
     )
@@ -92,11 +103,22 @@ def evaluate_all(
     timestamps = np.asarray([f.timestamp for f in player_sequence.frames], dtype=np.float32)
     reports: list[StepQualityReport] = []
 
+    combo = 0
+    all_perfect = True
     for step in chart.steps:
         mask = (timestamps >= step.start_time) & (timestamps <= step.end_time)
         indices = np.where(mask)[0]
         player_frames = [player_sequence.frames[i] for i in indices]
         report = evaluate_step(step, player_frames, config)
+        if report.grade == "Miss":
+            combo = 0
+            all_perfect = False
+        else:
+            combo += 1
+            if report.grade != "Perfect":
+                all_perfect = False
+        report.combo = combo
+        report.golden = all_perfect and combo > 0
         reports.append(report)
 
     return reports
@@ -125,12 +147,13 @@ def _evaluate_pose(
     deltas = median_player[UPPER_LANDMARKS_IDX, :2] - template_normed[UPPER_LANDMARKS_IDX, :2]
     distances = np.linalg.norm(deltas, axis=1)
     mean_dist = float(np.mean(distances))
-    position_score = max(0.0, 100.0 * (1.0 - mean_dist / 0.5))
+    tol = getattr(step, "tolerance", 1.0)
+    position_score = max(0.0, 100.0 * (1.0 - mean_dist / (0.5 * tol)))
 
     # --- symmetry_score: 左右对称性 ---
     angle_diffs = _upper_angle_diffs(median_player, template_normed)
     mean_angle_diff = float(np.mean(angle_diffs)) if angle_diffs else 0.0
-    symmetry_score = max(0.0, 100.0 * (1.0 - mean_angle_diff / (math.pi * 0.4)))
+    symmetry_score = max(0.0, 100.0 * (1.0 - mean_angle_diff / (math.pi * 0.4 * tol)))
 
     if mean_angle_diff > math.pi * 0.2:
         issues.append("左右关节角度不对称")

@@ -5,4 +5,7 @@ __all__ = [
     "normalize",
     "scoring",
     "collect",
+    "chart",
+    "quality",
+    "live_quality",
 ]
